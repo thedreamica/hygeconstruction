@@ -1,12 +1,22 @@
 import { Box } from "@mui/material";
-import NavigationBar from "@/components/navBar";
-
+import Hero from "@/components/Hero /Hero";
+import ReadMore from "@/components/ReadMore/ReadMore";
+import AboutUs from "@/components/AboutUs/AboutUs";
+import Services from "@/components/Services/Services";
+import WhychooseUs from "@/components/whyChooseUs/WhychooseUs";
+import HowWeWork from "@/components/HowWeWork/HowWeWork";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
     <Box>
-      <NavigationBar /> 
-      <Box> Hello testing</Box>
+      <Hero />
+      <ReadMore />
+      <AboutUs />
+      <Services />
+      <WhychooseUs />
+      <HowWeWork />
+      <Footer />
     </Box>
   );
 }
