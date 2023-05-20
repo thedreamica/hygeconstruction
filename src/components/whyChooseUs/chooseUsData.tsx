@@ -3,21 +3,21 @@ const ChooseUsData = [
     id: 1,
     title: "Expertise",
     description:
-      "We prioritize safety on all our job sites to ensure the well-being of our team and our clients.",
+      "our team has year of experince in the construction industry,and we bring that experties to every project we work on.",
     img: "https://i.ibb.co/k4y6TFQ/Rectangle-12.jpg",
   },
   {
     id: 2,
     title: "Safety",
     description:
-      "our team has year of experince in the construction industry,and we bring that experties to every project we work on.",
+      "We prioritize safety on all our job sites to ensure the well-being of our team and our clients.",
     img: "https://i.ibb.co/Vj5BFW2/Rectangle-13.jpg",
   },
   {
     id: 3,
-    title: "Communication",
+    title: "Timely Delivery",
     description:
-      "our team has year of experince in the construction industry,and we bring that experties to every project we work on.",
+      "We pride ourselves on delivering projects on time, ensuring your satisfaction and peace of mind.",
     img: "https://i.ibb.co/k4y6TFQ/Rectangle-12.jpg",
   },
   {

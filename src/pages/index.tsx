@@ -5,6 +5,7 @@ import AboutUs from "@/components/AboutUs/AboutUs";
 import Services from "@/components/Services/Services";
 import WhychooseUs from "@/components/whyChooseUs/WhychooseUs";
 import HowWeWork from "@/components/HowWeWork/HowWeWork";
+import ContactUs from "@/components/Contact-Us/ContactUs";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Services />
       <WhychooseUs />
       <HowWeWork />
+      <ContactUs />
       <Footer />
     </Box>
   );

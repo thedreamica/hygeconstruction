@@ -14,17 +14,18 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionData from "./AccordionData";
 
 const HowWeWork = () => {
-  const [expanded, setExpanded] = React.useState<string | false>(false);
-
+  const [expanded, setExpanded] = useState<string | false>(false);
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
+
   // const sectionRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <Box
       // ref={sectionRef}
+      className="howWeWorkSection"
       sx={{
         width: "100%",
         height: { xs: "auto", sm: "auto", lg: "100vh" },
@@ -63,12 +64,14 @@ const HowWeWork = () => {
             sm: "none",
             lg: "flex",
           },
-          flexDirection: "column",
           overflow: "auto",
+          flexDirection: "column",
           height: "100vh",
         }}
       >
         {AccordionData.map((item) => {
+          const ContentsOrder = item.id % 2 === 1 ? "1" : "2";
+          const imgOrder = item.id % 2 === 1 ? "2" : "1";
           return (
             <Box
               key={item.id}
@@ -77,13 +80,14 @@ const HowWeWork = () => {
                 justifyContent: "space-between",
                 height: "75%",
                 alignItems: "center",
-                my: "2em",
+                mb: "15em",
               }}
             >
               {/* first */}
               <Box
                 sx={{
                   color: "white",
+                  order: ContentsOrder,
                 }}
               >
                 {item.icon}
@@ -126,16 +130,13 @@ const HowWeWork = () => {
               {/* second */}
               <Box
                 sx={{
+                  order: imgOrder,
                   position: "relative",
                   width: "600px",
                   height: "600px",
                 }}
               >
-                <Image
-                  src="https://i.ibb.co/jvL8wGd/Rectangle-20.jpg"
-                  alt=""
-                  fill={true}
-                />
+                <Image src={item.img} alt="" fill={true} />
               </Box>
             </Box>
           );

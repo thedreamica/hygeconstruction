@@ -1,8 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Marquee from "react-fast-marquee";
 
@@ -22,7 +26,7 @@ const Footer = () => {
   };
   const marqueeBox = {
     display: "flex",
-    mx: { xs: "2.8em", sm: "2.8em", lg: "11em" },
+    mx: { xs: "2.8em", sm: "2.8em", lg: "8em" },
   };
   const marqueeStar = {
     color: "#FFCC00",
@@ -42,7 +46,7 @@ const Footer = () => {
             *
           </Typography>
           <Typography variant="h3" sx={marqueeTitle}>
-            Find More Contact
+            Quality Craftsmanship Guaranteed
           </Typography>
         </Box>
         <Box sx={marqueeBox}>
@@ -50,23 +54,34 @@ const Footer = () => {
             *
           </Typography>
           <Typography variant="h3" sx={marqueeTitle}>
-            Lets Work Together
+            Innovative Design Solutions
           </Typography>
         </Box>
+        {/* third */}
         <Box sx={marqueeBox}>
           <Typography variant="h3" sx={marqueeStar}>
             *
           </Typography>
           <Typography variant="h3" sx={marqueeTitle}>
-            Find More Contact
+            Reliable Construction Services
           </Typography>
         </Box>
+        {/* fourth */}
         <Box sx={marqueeBox}>
           <Typography variant="h3" sx={marqueeStar}>
             *
           </Typography>
           <Typography variant="h3" sx={marqueeTitle}>
-            Lets Work Together
+            Expert Team Collaboration
+          </Typography>
+        </Box>
+        {/* fifth */}
+        <Box sx={marqueeBox}>
+          <Typography variant="h3" sx={marqueeStar}>
+            *
+          </Typography>
+          <Typography variant="h3" sx={marqueeTitle}>
+            Timely Project Completion
           </Typography>
         </Box>
       </Marquee>
@@ -183,14 +198,14 @@ const Footer = () => {
           display: { xs: "flex", sm: "flex", lg: "none" },
           justifyContent: "center",
           alignItems: "center",
-          columnGap: "1em",
+          columnGap: "1.2em",
           mb: "2em",
         }}
       >
         <FacebookOutlinedIcon sx={{ fontSize: "1.8em" }} />
-        <FacebookOutlinedIcon sx={{ fontSize: "1.8em" }} />
-        <FacebookOutlinedIcon sx={{ fontSize: "1.8em" }} />
-        <FacebookOutlinedIcon sx={{ fontSize: "1.8em" }} />
+        <TwitterIcon sx={{ fontSize: "1.8em" }} />
+        <InstagramIcon sx={{ fontSize: "1.8em" }} />
+        <YouTubeIcon sx={{ fontSize: "1.8em" }} />
       </Box>
       <Box
         sx={{
@@ -218,14 +233,15 @@ const Footer = () => {
           </span>
           , All Rights Reserved.
         </Typography>
-        <Button
-          sx={{
-            background: "transparent",
-            display: { xs: "none", sm: "none", lg: "block" },
-          }}
-        >
-          <KeyboardArrowUpIcon sx={{ fontSize: "3em", color: "#FFCC00" }} />
-        </Button>
+        <Link href="#home">
+          <KeyboardArrowUpIcon
+            sx={{
+              fontSize: "3em",
+              color: "#FFCC00",
+              display: { xs: "none", sm: "none", lg: "block" },
+            }}
+          />
+        </Link>
       </Box>
     </Box>
   );

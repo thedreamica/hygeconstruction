@@ -5,9 +5,9 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const Services = () => {
   const subTitles = {
-    fontSize: { xs: "1.4em", sm: "1.4em", lg: "1.6em" },
+    fontSize: { xs: "1.4em", sm: "1.4em", lg: "1.8em" },
     fontWeight: "600",
-    my: "0.40em",
+    my: "0.52em",
   };
   const icons = {
     mb: "1px",
@@ -20,12 +20,14 @@ const Services = () => {
   };
   return (
     <Box
+      id="services"
       sx={{
         display: "flex",
         justifyContent: { xs: "center", sm: "center", lg: "space-between" },
         flexDirection: { xs: "column", sm: "column", lg: "row" },
         alignContent: "center",
         px: { xs: "1.3em", sm: "1.3em", lg: "8em" },
+        my: { xs: "0", sm: "0", lg: "7em" },
       }}
     >
       <Box>
@@ -33,7 +35,7 @@ const Services = () => {
           <Typography
             sx={{
               color: "#FFCC00",
-              fontSize: "1.8em",
+              fontSize: { xs: "1.8em", sm: "2.3em", lg: "2.3em" },
               fontWeight: "600",
               mb: "0.25em",
             }}

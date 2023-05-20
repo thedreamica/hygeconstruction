@@ -41,6 +41,7 @@ const AboutUs = () => {
 
   return (
     <Box
+      id="aboutUs"
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "column", lg: "row" },
@@ -53,7 +54,15 @@ const AboutUs = () => {
       }}
     >
       <Box sx={{ ...sections, order: { xs: 2, sm: 2, lg: 1 } }}>
-        <Box sx={{ ...images, order: { xs: 2, sm: 2, lg: 0 } }}>
+        <Box
+          sx={{
+            mb: "3em",
+            width: { xs: "auto", sx: "auto", lg: "800px" },
+            height: { xs: "320px", sx: "320px", lg: "440px" },
+            position: "relative",
+            order: { xs: 2, sm: 2, lg: 0 },
+          }}
+        >
           <Image
             style={{
               objectFit: "cover",
@@ -74,10 +83,9 @@ const AboutUs = () => {
             <Typography
               sx={{
                 color: "#FFCC00",
-                fontSize: "1.8em",
+                fontSize: { xs: "1.8em", sm: "2.3em", lg: "2.3em" },
                 fontWeight: "600",
                 mb: "0.35em",
-                display: { xs: "block", sm: "block", lg: "none" },
               }}
             >
               About us
@@ -97,10 +105,9 @@ const AboutUs = () => {
             sx={{
               order: { xs: 1, sm: 1, lg: 3 },
               color: "black",
-              border: { xs: "none", sm: "none", lg: "1px solid black" },
               borderRadius: "10px",
               width: "fit-content",
-              bgcolor: { xs: "#FFCC00", sm: "#FFCC00", lg: "#D9D9D9" },
+              bgcolor: "#FFCC00",
               py: { xs: "0.80em", sm: "0.80em", lg: "1.2em" },
               px: { xs: "1.8em", sm: "1.8em", lg: "2.6em" },
               fontWeight: "600",
@@ -108,7 +115,7 @@ const AboutUs = () => {
               mt: { xs: "1.5em", sm: "1.5em", lg: "2em" },
               mb: { xs: "3.5em", sm: "3.5em", lg: "0" },
               ":hover": {
-                bgcolor: { xs: "#FFCC00", sm: "#FFCC00", lg: "#D9D9D9" },
+                bgcolor: "#FFCC00",
               },
             }}
           >

@@ -27,8 +27,8 @@ const AccordionData = [
     id: 2,
     title: "Planning & Design",
     description:
-      "The first step in our process of working with clients involves meeting with them to discuss their needs and evaluate the project requirements. We provide initial recommendations and proposals based on this consultation to help clients understand how we can help them achieve their goals.",
-    img: "https://i.ibb.co/jvL8wGd/Rectangle-20.jpg",
+      "Our team carefully plans and designs each construction project, taking into account any site surveys or assessments that may be required. We also consider any architectural or engineering work that may be necessary to ensure that the project is feasible and will meet our clients' needs.",
+    img: "https://i.postimg.cc/RhzD99sx/4.png",
     icon: (
       <ImageIcon
         sx={{
@@ -44,8 +44,8 @@ const AccordionData = [
     id: 3,
     title: "Project Management",
     description:
-      "The first step in our process of working with clients involves meeting with them to discuss their needs and evaluate the project requirements. We provide initial recommendations and proposals based on this consultation to help clients understand how we can help them achieve their goals.",
-    img: "https://i.ibb.co/jvL8wGd/Rectangle-20.jpg",
+      "Our company takes a comprehensive approach to project management, which includes scheduling, budgeting, and oversight of subcontractors and suppliers. We work closely with our clients to ensure that the project is completed on time and within budget.",
+    img: "https://i.postimg.cc/bvcY7Sx6/2.png",
     icon: (
       <DescriptionIcon
         sx={{
@@ -61,8 +61,8 @@ const AccordionData = [
     id: 4,
     title: "Construction",
     description:
-      "The first step in our process of working with clients involves meeting with them to discuss their needs and evaluate the project requirements. We provide initial recommendations and proposals based on this consultation to help clients understand how we can help them achieve their goals.",
-    img: "https://i.ibb.co/jvL8wGd/Rectangle-20.jpg",
+      "Once the planning and design phase is complete, our team begins the construction phase of the project. This involves site preparation, building, and quality control measures to ensure that the project meets our clients' expectations.",
+    img: "https://i.postimg.cc/52SCsX2L/5.png",
     icon: (
       <BusinessIcon
         sx={{
@@ -78,8 +78,8 @@ const AccordionData = [
     id: 5,
     title: "Safety Check",
     description:
-      "The first step in our process of working with clients involves meeting with them to discuss their needs and evaluate the project requirements. We provide initial recommendations and proposals based on this consultation to help clients understand how we can help them achieve their goals.",
-    img: "https://i.ibb.co/jvL8wGd/Rectangle-20.jpg",
+      "At our company, safety is our top priority. We take all necessary measures to ensure the safety of workers and clients on construction sites. This includes implementing specific protocols and safety measures to prevent accidents and injuries.",
+    img: "https://i.postimg.cc/SQM4hxK3/3.png",
     icon: (
       <HowToRegIcon
         sx={{
@@ -95,8 +95,8 @@ const AccordionData = [
     id: 6,
     title: "Completions & Follow-ups",
     description:
-      "The first step in our process of working with clients involves meeting with them to discuss their needs and evaluate the project requirements. We provide initial recommendations and proposals based on this consultation to help clients understand how we can help them achieve their goals.",
-    img: "https://i.ibb.co/jvL8wGd/Rectangle-20.jpg",
+      "Once the project is completed, our company provides follow-up support and maintenance as required. We believe that this ongoing support is essential for ensuring the long-term success of the project and the satisfaction of our clients.",
+    img: "https://i.postimg.cc/85LZZ91K/6.png",
     icon: (
       <VerifiedIcon
         sx={{

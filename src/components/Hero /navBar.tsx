@@ -28,42 +28,53 @@ const NavBar = () => {
     lineHeight: { xs: "10px", sm: "10px", lg: "90px" },
     fontSize: { xs: "17px", sm: "17px", lg: "15px" },
     textDecoration: "none",
-    mx: { xs: "0", sm: "0", lg: "4.5em" },
+    mx: { xs: "0", sm: "0", lg: "2.6em" },
     my: { xs: "1.8em", sm: "1.8em", lg: "0em" },
     fontWeight: "600",
+  };
+  const btn = {
+    color: "black",
+    bgcolor: "#FFCC00",
+    textTransform: "uppercase",
+    py: "1.8em",
+    px: "2em",
+    fontSize: "15px",
+    lineHeight: "10px",
+    fontWeight: "700",
+    borderRadius: "10px",
+    ":hover": {
+      bgcolor: "#FFCC00",
+    },
   };
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
+        justifyContent: "space-between",
         bgcolor: "white",
         height: { xs: "10vh", sm: "10vh", lg: "10.50vh" },
         mx: { xs: "0em", sm: "0em", lg: "1.50em" },
         my: { xs: "0em", sm: "0em", lg: "1em" },
-        px: { sx: "1em", sm: "1em", lg: "1em" },
+        px: { sx: "1em", sm: "1em", lg: "1.5em" },
       }}
     >
       <Box
         sx={{
           position: "relative",
-          width: { xs: "230px", sm: "230px", lg: "145px" },
+          width: { xs: "156px", sm: "160px", lg: "145px" },
           height: { xs: "70px", sm: "70px", lg: "87px" },
-          ml: "1em",
+          mx: { xs: "1em", sm: "1em", lg: "0" },
         }}
       >
         <Image
           src="https://i.ibb.co/JjK73FB/Group-74.png"
           alt="hyge"
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "contain" }}
           fill={true}
         />
       </Box>
-      <Box
-        sx={{
-          width: "100%",
-        }}
-      >
+      <Box>
         <Box
           sx={{
             display: {
@@ -73,8 +84,6 @@ const NavBar = () => {
             },
             flexDirection: { xs: "column", sm: "column", lg: "row" },
             alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
             height: { xs: "40em", sm: "40em", lg: "0em" },
             bgcolor: { xs: "white", sm: "white", lg: "transparent" },
             position: { xs: "absolute", sm: "absolute", lg: "relative" },
@@ -92,61 +101,50 @@ const NavBar = () => {
               },
               position: { xs: "absolute", sm: "absolute", lg: "relative" },
               flexDirection: { xs: "column", sm: "column", lg: "row" },
-              top: { xs: "8em", sm: "8em", lg: "0" },
+              top: { xs: "6em", sm: "6em", lg: "0" },
             }}
           >
-            <Link href="" sx={links}>
+            <Link href="#home" sx={links}>
               Home
             </Link>
-            <Link href="" sx={links}>
+            <Link href="#aboutUs" sx={links}>
+              About Us
+            </Link>
+            <Link href="#services" sx={links}>
               Services
             </Link>
             <Link href="" sx={links}>
-              Portfolio
+              Our Values
             </Link>
-            <Link href="" sx={links}>
+            <Link href="#contactUs" sx={links}>
               Contact Us
             </Link>
           </Box>
           <Box
             sx={{
               position: { xs: "absolute", sm: "absolute", lg: "relative" },
-              top: { xs: "27em", sm: "27em", lg: "0" },
+              top: { xs: "30em", sm: "30em", lg: "0" },
+              display: { xs: "block", sm: "block", lg: "none" },
             }}
           >
-            <Button
-              sx={{
-                color: "black",
-                bgcolor: "#FFCC00",
-                textTransform: "uppercase",
-                py: "1.8em",
-                px: "2em",
-                fontSize: "15px",
-                lineHeight: "10px",
-                fontWeight: "700",
-                borderRadius: "10px",
-                ":hover": {
-                  bgcolor: "#FFCC00",
-                },
-              }}
-            >
-              Request quote
-            </Button>
+            <Button sx={btn}>Request quote</Button>
           </Box>
         </Box>
+
         {open ? (
-          <Button onClick={handleMenu}>
+          <Button disableRipple onClick={handleMenu}>
             <CloseIcon
               sx={{
                 fontSize: "2.5em",
                 color: "black",
                 display: { xs: "block", sm: "block", lg: "none" },
-                ml: "5em",
+                ml: "6.5em",
               }}
             />
           </Button>
         ) : (
           <Button
+            disableRipple
             sx={{
               background: "transparent",
               color: "transparent",
@@ -164,6 +162,13 @@ const NavBar = () => {
             />
           </Button>
         )}
+      </Box>
+      <Box
+        sx={{
+          display: { xs: "none", sm: "none", lg: "flex" },
+        }}
+      >
+        <Button sx={btn}>Request quote</Button>
       </Box>
     </Box>
   );

@@ -24,7 +24,7 @@ const Hero = () => {
   }, [Data.length]);
 
   return (
-    <Box>
+    <Box id="home">
       <Box
         sx={{
           position: "relative",
@@ -40,7 +40,8 @@ const Hero = () => {
         <Box
           sx={{
             width: "100%",
-            zIndex: "1",
+            zIndex: 2,
+            position: { xs: "fixed", sm: "fixed", lg: "relative" },
           }}
         >
           <NavBar />
@@ -69,9 +70,6 @@ const Hero = () => {
                   fontSize: { xs: "1.7em", sx: "1.7em", lg: "2em" },
                   mx: { xs: "0.60em", sx: "0.60em", lg: "0.70em" },
                   transition: "color 0.5s ease",
-                  ":hover": {
-                    color: "#FFCC00",
-                  },
                 }}
               />
             </Button>
