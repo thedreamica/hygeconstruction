@@ -74,7 +74,7 @@ const ReadMore = () => {
         <Typography sx={title}>Remodeling</Typography>
         <Typography sx={description}>
           Our team has the expertise to handle any remodeling project, whether
-          it's a simple update or a complete renovation.
+          it&apos;s a simple update or a complete renovation.
         </Typography>
         <Button sx={btn}>
           READ MORE
