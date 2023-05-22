@@ -150,7 +150,12 @@ const Footer = () => {
               my: "6px",
             }}
           >
-            support@hygeinfotech.com
+                        <Link
+              href="mailto:hello@hygeconstruction.com"
+              style={{ color: "white" }}
+            >
+              hello@hygeconstruction.com
+            </Link>
           </Typography>
           <Typography sx={para}>Mon - Friday, 8am : 5pm</Typography>
         </Box>
