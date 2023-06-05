@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CircleIcon from "@mui/icons-material/Circle";
-import CarouselData from "./CarouselData";
+import CarouselData from "src/components/Hero/CarouselData";
 import NavBar from "./navBar";
 
 const Hero = () => {
