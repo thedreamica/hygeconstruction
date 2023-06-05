@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Hero from "@/components/Hero /Hero";
+import Hero from "@/components/Hero/Hero";
 import ReadMore from "@/components/ReadMore/ReadMore";
 import AboutUs from "@/components/AboutUs/AboutUs";
 import Services from "@/components/Services/Services";
