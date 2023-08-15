@@ -41,7 +41,7 @@ const ReadMore = () => {
           my: { xs: "1.8em", sx: "1.8em", lg: "0" },
         }}
       >
-        <Typography sx={title}>Commercial construction</Typography>
+        <Typography sx={title}>Commercial constructionChecking</Typography>
         <Typography sx={description}>
           From retail spaces and office buildings to warehouses and industrial
           facilities our industrial experts got you covered.
