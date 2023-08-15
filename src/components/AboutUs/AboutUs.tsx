@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Box, Button, Link, Typography } from "@mui/material";
+
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CircleIcon from "@mui/icons-material/Circle";
 
@@ -12,62 +13,61 @@ const AboutUs = () => {
   };
   const icons = {
     fontSize: "12px",
-    color: "#FFCC00",
+    color: "primary.main",
     mr: "8px",
   };
   const ulNames = {
     color: "black",
     textDecoration: "none",
-    fontSize: "1.1em",
+    fontSize: { xs: "1em", md: "1.2em" },
     fontWeight: "600",
   };
   const para = {
     lineHeight: "25px",
-    fontSize: "1.2em",
+    fontSize: { xs: "1em", md: "1.2em" },
     fontWeight: "500",
-    width: { xs: "auto", sx: "auto", lg: "40em" },
-  };
-  const images = {
-    mb: "3em",
-    width: { xs: "auto", sx: "auto", lg: "800px" },
-    height: { xs: "320px", sx: "320px", lg: "500px" },
-    position: "relative",
+    width: { xs: "auto", md: "40em" },
   };
   const sections = {
     display: "flex",
     flexDirection: "column",
-    width: { xs: "auto", sx: "auto", lg: "800px" },
+    width: { xs: "auto", md: "100%" },
   };
-
+  const imageStyles = {
+    position: "relative",
+    width: "100%",
+    mb: "2em",
+  };
   return (
     <Box
       id="aboutUs"
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", sm: "column", lg: "row" },
-        justifyContent: { xs: "center", sx: "center", lg: "space-between" },
-        width: "100%",
-        mb: { xs: "1.7em", sm: "1.7em", lg: "6em" },
-        cursor: "default",
-        px: { xs: "1.2em", sx: "1.2em", lg: "8em" },
+        flexDirection: { xs: "column", md: "row" },
+        justifyContent: { xs: "center", md: "space-between" },
+        px: { xs: "1.5em", md: "10em" },
+        py: { xs: "0", md: "1.5em" },
+        mb: { xs: "-4em", md: "6em" },
         position: "relative",
+        width: "100%",
+        MinHeight: "100vh",
+        gap: { xs: "0", md: "3em" },
+        cursor: "default",
       }}
     >
-      <Box sx={{ ...sections, order: { xs: 2, sm: 2, lg: 1 } }}>
+      <Box sx={{ ...sections, order: { xs: 2, md: 1 } }}>
         <Box
           sx={{
-            mb: "3em",
-            width: { xs: "auto", sx: "auto", lg: "800px" },
-            height: { xs: "320px", sx: "320px", lg: "440px" },
-            position: "relative",
-            order: { xs: 2, sm: 2, lg: 0 },
+            ...imageStyles,
+            height: { xs: "250px", md: "380px" },
+            order: { xs: 2, md: 0 },
           }}
         >
           <Image
             style={{
               objectFit: "cover",
             }}
-            src="https://i.postimg.cc/PJF0ZHJf/about-1.jpg"
+            src="https://i.postimg.cc/pLSRtmDw/AboutUs.png"
             alt=""
             fill={true}
           />
@@ -75,17 +75,17 @@ const AboutUs = () => {
         <Box>
           <Box
             sx={{
-              order: { xs: 3, sm: 3, lg: 2 },
-              position: { xs: "absolute", sm: "absolute", lg: "relative" },
-              top: "0",
+              order: { xs: 3, md: 2 },
+              position: { xs: "absolute", md: "relative" },
+              top: { xs: "5em", md: 0 },
             }}
           >
             <Typography
               sx={{
-                color: "#FFCC00",
-                fontSize: { xs: "1.8em", sm: "2.3em", lg: "2.3em" },
+                color: "primary.main",
+                fontSize: { xs: "1.5em", md: "2em" },
                 fontWeight: "600",
-                mb: "0.35em",
+                mb: ".2em",
               }}
             >
               About us
@@ -94,50 +94,58 @@ const AboutUs = () => {
               variant="h3"
               sx={{
                 fontWeight: "600",
-                fontSize: { xs: "2.6em", sm: "2.6em", lg: "4em" },
+                fontSize: { xs: "2.4em", md: "3.5em" },
                 lineHeight: "1.3em",
               }}
             >
               Welcome to hyge Construction. We are professional & reliable.
             </Typography>
           </Box>
-          <Button
-            sx={{
-              order: { xs: 1, sm: 1, lg: 3 },
-              color: "black",
-              borderRadius: "10px",
-              width: "fit-content",
-              bgcolor: "#FFCC00",
-              py: { xs: "0.80em", sm: "0.80em", lg: "1.2em" },
-              px: { xs: "1.8em", sm: "1.8em", lg: "2.6em" },
-              fontWeight: "600",
-              fontSize: "1em",
-              mt: { xs: "1.5em", sm: "1.5em", lg: "2em" },
-              mb: { xs: "3.5em", sm: "3.5em", lg: "0" },
-              ":hover": {
-                bgcolor: "#FFCC00",
-              },
-            }}
-          >
-            CONTACT US
-            <ArrowOutwardIcon
+          <Link href="#contactUs">
+            <Button
+              variant="contained"
               sx={{
-                fontSize: "1.8em",
-                ml: "5px",
-                mb: "10px",
+                order: { xs: 1, md: 3 },
+                color: "black",
+                borderRadius: "10px",
+                width: "fit-content",
+                bgcolor: "primary.main",
+                py: { xs: ".8em", md: ".8em" },
+                px: { xs: "1.8em", md: "2em" },
+                fontWeight: "600",
+                fontSize: { xs: "1em", md: "1.2em" },
+                mt: { xs: "1.5em", md: "1.5em" },
+                mb: { xs: "3.5em", md: "0" },
+                ":hover": {
+                  bgcolor: "primary.main",
+                },
               }}
-            />
-          </Button>
+            >
+              CONTACT US
+              <ArrowOutwardIcon
+                sx={{
+                  fontSize: { xs: "1.8em", md: "1.5em" },
+                  ml: "5px",
+                  mb: { xs: "7px", md: "10px" },
+                }}
+              />
+            </Button>
+          </Link>
         </Box>
       </Box>
       <Box
         sx={{
           ...sections,
-          order: { xs: 1, sm: 1, lg: 2 },
-          mt: { xs: "19em", sm: " 19em", lg: "0em" },
+          order: { xs: 1, md: 2 },
+          mt: { xs: "21.5em", md: 0 },
         }}
       >
-        <Box sx={images}>
+        <Box
+          sx={{
+            ...imageStyles,
+            height: { xs: "250px", md: "450px" },
+          }}
+        >
           <Image
             style={{
               objectFit: "cover",
@@ -151,7 +159,7 @@ const AboutUs = () => {
           <Typography
             sx={{
               ...para,
-              mb: "2em",
+              mb: { xs: "1em", md: "1.5em" },
             }}
           >
             At HYGE Construction, we understand that every project is unique,

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Box, Button, Link } from "@mui/material";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -25,16 +26,16 @@ const NavBar = () => {
 
   const links = {
     color: "black",
-    lineHeight: { xs: "10px", sm: "10px", lg: "90px" },
-    fontSize: { xs: "17px", sm: "17px", lg: "15px" },
+    lineHeight: { xs: "10px", md: "90px" },
+    fontSize: { xs: "17px", md: "15px" },
     textDecoration: "none",
-    mx: { xs: "0", sm: "0", lg: "2.6em" },
-    my: { xs: "1.8em", sm: "1.8em", lg: "0em" },
+    mx: { xs: 0, md: "2.6em" },
+    my: { xs: "1.8em", md: 0 },
     fontWeight: "600",
   };
   const btn = {
     color: "black",
-    bgcolor: "#FFCC00",
+    bgcolor: "primary.main",
     textTransform: "uppercase",
     py: "1.8em",
     px: "2em",
@@ -43,7 +44,7 @@ const NavBar = () => {
     fontWeight: "700",
     borderRadius: "10px",
     ":hover": {
-      bgcolor: "#FFCC00",
+      bgcolor: "primary.main",
     },
   };
   return (
@@ -53,18 +54,17 @@ const NavBar = () => {
         alignItems: "center",
         justifyContent: "space-between",
         bgcolor: "white",
-        height: { xs: "10vh", sm: "10vh", lg: "10.50vh" },
-        mx: { xs: "0em", sm: "0em", lg: "1.50em" },
-        my: { xs: "0em", sm: "0em", lg: "1em" },
-        px: { sx: "1em", sm: "1em", lg: "1.5em" },
+        height: { xs: "10vh", md: "10.5vh" },
+        mx: { xs: 0, md: "1.5em" },
+        my: { xs: 0, md: "1em" },
+        px: { sx: "1em", md: "1.5em" },
       }}
     >
       <Box
         sx={{
           position: "relative",
-          width: { xs: "156px", sm: "160px", lg: "145px" },
-          height: { xs: "70px", sm: "70px", lg: "87px" },
-          mx: { xs: "1em", sm: "1em", lg: "0" },
+          width: { xs: "156px", md: "145px" },
+          height: { xs: "70px", md: "87px" },
         }}
       >
         <Image
@@ -79,29 +79,27 @@ const NavBar = () => {
           sx={{
             display: {
               xs: open ? "flex" : "none",
-              sm: open ? "flex" : "none",
-              lg: "flex",
+              md: "flex",
             },
-            flexDirection: { xs: "column", sm: "column", lg: "row" },
+            flexDirection: { xs: "column", md: "row" },
             alignItems: "center",
-            height: { xs: "40em", sm: "40em", lg: "0em" },
-            bgcolor: { xs: "white", sm: "white", lg: "transparent" },
-            position: { xs: "absolute", sm: "absolute", lg: "relative" },
-            left: "0",
-            right: "0",
-            top: "0",
+            height: { xs: "40em", md: 0 },
+            bgcolor: { xs: "white", md: "transparent" },
+            position: { xs: "absolute", md: "relative" },
+            left: 0,
+            right: 0,
+            top: 0,
           }}
         >
           <Box
             sx={{
               display: {
                 xs: "flex",
-                sm: "flex",
-                lg: "block",
+                md: "block",
               },
-              position: { xs: "absolute", sm: "absolute", lg: "relative" },
-              flexDirection: { xs: "column", sm: "column", lg: "row" },
-              top: { xs: "6em", sm: "6em", lg: "0" },
+              position: { xs: "absolute", md: "relative" },
+              flexDirection: { xs: "column", md: "row" },
+              top: { xs: "6em", md: 0 },
             }}
           >
             <Link href="#home" sx={links}>
@@ -122,9 +120,9 @@ const NavBar = () => {
           </Box>
           <Box
             sx={{
-              position: { xs: "absolute", sm: "absolute", lg: "relative" },
-              top: { xs: "30em", sm: "30em", lg: "0" },
-              display: { xs: "block", sm: "block", lg: "none" },
+              position: { xs: "absolute", md: "relative" },
+              top: { xs: "30em", md: "0" },
+              display: { xs: "block", md: "none" },
             }}
           >
             <Button sx={btn}>Request quote</Button>
@@ -137,7 +135,7 @@ const NavBar = () => {
               sx={{
                 fontSize: "2.5em",
                 color: "black",
-                display: { xs: "block", sm: "block", lg: "none" },
+                display: { xs: "block", md: "none" },
                 ml: "6.5em",
               }}
             />
@@ -148,7 +146,7 @@ const NavBar = () => {
             sx={{
               background: "transparent",
               color: "transparent",
-              display: { xs: "block", sm: "block", lg: "none" },
+              display: { xs: "block", md: "none" },
               width: "fit-content",
               float: "right",
             }}
@@ -165,7 +163,7 @@ const NavBar = () => {
       </Box>
       <Box
         sx={{
-          display: { xs: "none", sm: "none", lg: "flex" },
+          display: { xs: "none", md: "flex" },
         }}
       >
         <Button sx={btn}>Request quote</Button>

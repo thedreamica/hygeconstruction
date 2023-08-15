@@ -9,31 +9,28 @@ const WhychooseUs = () => {
       sx={{
         display: "grid",
         placeItems: "center",
-        mt: "6.5em",
-        mb: "3em",
-        px: "1.3em",
+        px: { xs: "1.5em", md: "10em" },
+        py: { xs: 0, md: 6 },
         overflow: "hidden",
       }}
     >
-      <Box>
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: "600",
-            fontSize: { xs: "2.5em", sm: "2.5em", lg: "4em" },
-            lineHeight: "1.3em",
-            mb: "1em",
-          }}
-        >
-          Why Choose us
-        </Typography>
-      </Box>
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: "600",
+          fontSize: { xs: "2.4em", md: "3.5em" },
+          lineHeight: "1.3em",
+        }}
+      >
+        Why Choose us
+      </Typography>
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "auto", sm: "auto", lg: "auto auto" },
-          columnGap: { xs: "0em", sm: "0", lg: "15em" },
-          rowGap: { xs: "2.5em", sm: "2.5em", lg: "5em" },
+          gridTemplateColumns: { xs: "auto", md: "auto auto" },
+          columnGap: { xs: 0, md: "15em" },
+          rowGap: { xs: "2.5em", md: "5em" },
+          my: { xs: "2em", md: "2.5em" },
         }}
       >
         {ChooseUsData.map((item) => {
@@ -43,10 +40,11 @@ const WhychooseUs = () => {
             <Box
               key={id}
               sx={{
-                width: { xs: "330px", sm: "330px", lg: "500px" },
-                height: { xs: "450px", sm: "450px", lg: "600px" },
                 position: "relative",
-                mt: { xs: "0", sm: "0", lg: mtPosition },
+                width: { xs: "100%", md: "500px" },
+                height: { xs: "100%", md: "600px" },
+                mt: { xs: 0, md: mtPosition },
+                pb: { xs: 5, md: 0 },
               }}
             >
               <Image
@@ -60,24 +58,24 @@ const WhychooseUs = () => {
               />
               <Box
                 sx={{
-                  background: "rgba(255,255,255,0.850)",
-                  width: { xs: "400px", sm: "300px", lg: "500px" },
-                  height: { xs: "450px", sm: "450px", lg: "600px" },
                   position: "absolute",
+                  width: "100%",
+                  height: { xs: "450px", md: "600px" },
+                  background: "rgba(255,255,255,0.850)",
                   zIndex: "-1",
                 }}
               ></Box>
               <Box
                 sx={{
-                  pt: { xs: "1.5em", sm: "1.5em", lg: "8.2em" },
-                  px: { xs: "1.3em", sm: "1.3em", lg: "3.7em" },
+                  pt: { xs: "1.5em", md: "8.2em" },
+                  px: { xs: "1.3em", md: "3.7em" },
                 }}
               >
                 <Typography
                   sx={{
-                    fontSize: { xs: "2.2em", sm: "2.2em", lg: "2.5em" },
+                    fontSize: { xs: "2.2em", md: "2.5em" },
                     fontWeight: "600",
-                    mb: "1.2em",
+                    mb: { xs: ".7em", md: "1em" },
                   }}
                 >
                   {title}
@@ -85,14 +83,14 @@ const WhychooseUs = () => {
                 <Divider
                   sx={{
                     background: "black",
-                    display: { xs: "block", sm: "block", lg: "none" },
+                    display: { xs: "block", md: "none" },
                     mb: "2em",
                   }}
                 />
                 <Typography
                   sx={{
-                    fontSize: { xs: "1.5em", sm: "1.5em", lg: "1.8em" },
-                    fontWeight: "500",
+                    fontSize: { xs: "1.5em", md: "1.8em" },
+                    fontWeight: "400",
                     lineHeight: "2em",
                   }}
                 >

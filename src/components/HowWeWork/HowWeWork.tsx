@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   Accordion,
@@ -19,21 +19,18 @@ const HowWeWork = () => {
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
-
-  // const sectionRef = useRef<HTMLDivElement | null>(null);
-
   return (
     <Box
-      // ref={sectionRef}
-      className="howWeWorkSection"
+      id="howWeWork"
       sx={{
         width: "100%",
-        height: { xs: "auto", sm: "auto", lg: "100vh" },
-        px: { xs: "0em", sm: "0em", lg: "8em" },
-        bgcolor: { xs: "black", sm: "black", lg: "transparent" },
-        py: { xs: "4em", sm: "4em", lg: "0em" },
+        height: { xs: "auto", md: "100vh" },
+        px: { xs: "1.5em", md: "10em" },
+        py: { xs: 3, md: 0 },
+        bgcolor: { xs: "black", md: "transparent" },
         position: "relative",
         overflow: "hidden",
+        mb: { xs: -5, md: 0 },
       }}
     >
       <Image
@@ -46,27 +43,23 @@ const HowWeWork = () => {
         }}
       />
       <Typography
-        variant="h4"
+        variant="h3"
         sx={{
           color: "white",
-          fontSize: { xs: "2.5em", sm: "2.5em", lg: "3.5em" },
           fontWeight: "600",
-          py: { xs: "0.80em", sm: "0.80em", lg: "1em" },
-          px: { xs: "1em", sm: "1em", lg: "0" },
+          fontSize: { xs: "2.4em", md: "3.5em" },
+          lineHeight: "1.3em",
+          py: { xs: ".8em", md: "1em" },
         }}
       >
         How we work
       </Typography>
       <Box
         sx={{
-          display: {
-            xs: "none",
-            sm: "none",
-            lg: "flex",
-          },
-          overflow: "auto",
+          display: { xs: "none", md: "flex" },
           flexDirection: "column",
           height: "100vh",
+          overflow: "auto",
         }}
       >
         {AccordionData.map((item) => {
@@ -83,7 +76,6 @@ const HowWeWork = () => {
                 mb: "15em",
               }}
             >
-              {/* first */}
               <Box
                 sx={{
                   color: "white",
@@ -94,7 +86,7 @@ const HowWeWork = () => {
                 <Typography
                   variant="h5"
                   sx={{
-                    fontSize: { xs: "2.7em", sm: "2.7em", lg: "3em" },
+                    fontSize: { xs: "2.7em", md: "3em" },
                     fontWeight: "600",
                     mb: "0.50em",
                   }}
@@ -105,7 +97,7 @@ const HowWeWork = () => {
                   sx={{
                     width: "20em",
                     lineHeight: "1.5em",
-                    fontSize: { xs: "1.3em", sm: "1.3em", lg: "1.5em" },
+                    fontSize: { xs: "1.3em", md: "1.5em" },
                   }}
                 >
                   {item.description}
@@ -127,7 +119,6 @@ const HowWeWork = () => {
                   <ArrowOutwardIcon />
                 </Button>
               </Box>
-              {/* second */}
               <Box
                 sx={{
                   order: imgOrder,
@@ -142,10 +133,10 @@ const HowWeWork = () => {
           );
         })}
       </Box>
-      {/* accordion */}
       <Box
         sx={{
-          display: { xs: "block", sm: "block", lg: "none" },
+          display: { xs: "block", md: "none" },
+          mb: 5,
         }}
       >
         {AccordionData.map((item) => {
@@ -154,12 +145,20 @@ const HowWeWork = () => {
           return (
             <Accordion
               key={id}
-              sx={{ bgcolor: "black", color: "white" }}
+              sx={{
+                bgcolor: "black",
+                color: "white",
+                ".MuiAccordionSummary-root": { p: 0 },
+                ".MuiAccordionDetails-root": { p: 0 },
+              }}
               expanded={expanded === panelId}
               onChange={handleChange(panelId)}
             >
               <AccordionSummary
-                sx={{ borderBottom: "1px solid #707070", mx: "1em" }}
+                sx={{
+                  borderBottom: "1px solid",
+                  borderColor: "primary.light",
+                }}
                 expandIcon={
                   <ExpandMoreIcon sx={{ color: "yellow", fontSize: "2.4em" }} />
                 }
@@ -180,14 +179,14 @@ const HowWeWork = () => {
                       flexShrink: 0,
                       fontSize: "1.3em",
                       fontWeight: "600",
-                      mx: "0.50em",
+                      mx: ".5em",
                     }}
                   >
                     {title}
                   </Typography>
                 </Box>
               </AccordionSummary>
-              <AccordionDetails sx={{ mx: "1em" }}>
+              <AccordionDetails>
                 <Typography
                   sx={{
                     fontSize: "1.1em",
@@ -201,13 +200,12 @@ const HowWeWork = () => {
                 <Box
                   sx={{
                     position: "relative",
-                    width: "300px",
+                    width: "100%",
                     height: "300px",
                   }}
                 >
                   <Image src={img} alt={title} fill={true} />
                 </Box>
-
                 <Button
                   sx={{
                     color: "white",

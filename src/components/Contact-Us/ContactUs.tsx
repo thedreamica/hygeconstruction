@@ -1,27 +1,25 @@
 import React from "react";
 import Image from "next/image";
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Link, TextField, Typography } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const ContactUs = () => {
-  const text = {
-    color: "black",
-  };
   return (
     <Box
       id="contactUs"
       sx={{
-        px: { xs: "1.3em", sm: "1.3em", lg: "8em" },
-        my: "5em",
-        pb: { xs: "3.3em", sm: "3.3em", lg: "0" },
+        px: { xs: "1.5em", md: "10em" },
+        pt: { xs: 13, md: 8 },
+        pb: { xs: 3, md: 8 },
       }}
     >
       <Typography
         variant="h3"
         sx={{
+          fontSize: { xs: "2.4em", md: "3em" },
           fontWeight: "600",
-          mb: "0.50em",
-          fontSize: { xs: "2.5em", sm: "2.5em", lg: "3em" },
+          lineHeight: "1.3em",
+          mb: 3,
         }}
       >
         CONTACT US
@@ -29,20 +27,20 @@ const ContactUs = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: { xs: "center", sm: "center", lg: "space-between" },
-          height: { xs: "auto", sm: "auto", lg: "500px" },
-          flexDirection: { xs: "column", sm: "column", lg: "row" },
+          justifyContent: { xs: "center", md: "space-between" },
+          height: { xs: "auto", md: "500px" },
+          flexDirection: { xs: "column", md: "row" },
+          mb: { xs: 5, md: 0 },
         }}
       >
-        {/* first box */}
         <Box>
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "auto", sm: "auto", lg: "auto auto" },
+              gridTemplateColumns: { xs: "auto", md: "auto auto" },
               height: "400px",
-              gap: "3.5em",
-              width: { xs: "auto", sm: "auto", lg: "800px" },
+              gap: { xs: "3em", md: "3.5em" },
+              width: { xs: "100%", md: "800px" },
             }}
           >
             <TextField label="Name" variant="standard" />
@@ -50,7 +48,7 @@ const ContactUs = () => {
             <TextField label="Phone" variant="standard" />
             <TextField label="Subject" variant="standard" />
             <TextField
-              sx={{ width: { xs: "auto", sm: "auto", lg: "213%" } }}
+              sx={{ width: { xs: "100%", md: "213%" } }}
               label="Message"
               multiline
               rows={6}
@@ -62,14 +60,14 @@ const ContactUs = () => {
               color: "black",
               borderRadius: "10px",
               width: "fit-content",
-              bgcolor: "#FFCC00",
-              py: { xs: "0.80em", sm: "0.80em", lg: "1.2em" },
-              px: { xs: "1.8em", sm: "1.8em", lg: "2.6em" },
+              bgcolor: "primary.main",
+              py: { xs: ".8em", md: ".8em" },
+              px: { xs: "1.8em", md: "2.5em" },
               fontWeight: "600",
-              fontSize: "1em",
-              mt: { xs: "14.50em", sm: "14.50em", lg: "2em" },
+              fontSize: { xs: "1em", md: "1.2em" },
+              mt: { xs: "12em", md: "2em" },
               ":hover": {
-                bgcolor: "#FFCC00",
+                bgcolor: "primary.main",
               },
             }}
           >
@@ -83,13 +81,14 @@ const ContactUs = () => {
             />
           </Button>
         </Box>
-        {/* second */}
         <Box
           sx={{
             position: "relative",
-            width: { xs: "auto", sm: "auto", lg: "600px" },
-            height: "400px",
-            mt: { xs: "3em", sm: "3em", lg: "0" },
+            width: { xs: "100%", md: "600px" },
+            height: { xs: "300px", md: "400px" },
+            mt: { xs: "3em", md: 0 },
+            background:
+              "linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.00) 100%)",
           }}
         >
           <Typography
@@ -97,10 +96,10 @@ const ContactUs = () => {
             sx={{
               width: "10em",
               color: "white",
-              fontSize: { xs: "2em", sm: "2em", lg: "2.5em" },
+              fontSize: { xs: "2em", md: "2.5em" },
               fontWeight: "600",
-              mt: { xs: "8.2em", sm: "8.2em", lg: "6.3em" },
-              ml: { xs: "0.5em", sm: "0.5em", lg: "1.2em" },
+              mt: { xs: "5.3em", md: "6.3em" },
+              ml: { xs: ".5em", md: "1.2em" },
             }}
           >
             ON DEMAND CONSTRUCTION SERVICE
@@ -113,14 +112,19 @@ const ContactUs = () => {
           />
           <Typography
             sx={{
-              fontSize: { xs: "1.4em", sm: "1.4em", lg: "1.8em" },
+              fontSize: { xs: "1.3em", md: "1.8em" },
               fontWeight: "600",
               display: "flex",
               justifyContent: "center",
-              mt: { xs: "1.2em", sm: "1.2em", lg: "0.40em" },
+              mt: { xs: "1.2em", md: ".4em" },
             }}
           >
-            support@hygeinfotech.com
+            <Link
+              sx={{ color: "black", textDecoration: "none" }}
+              href="mailto:support@hygeinfotech.com"
+            >
+              support@hygeinfotech.com
+            </Link>
           </Typography>
         </Box>
       </Box>

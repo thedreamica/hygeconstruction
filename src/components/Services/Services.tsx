@@ -5,7 +5,7 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 const Services = () => {
   const subTitles = {
-    fontSize: { xs: "1.4em", sm: "1.4em", lg: "1.8em" },
+    fontSize: { xs: "1.4em", md: "1.8em" },
     fontWeight: "600",
     my: "0.52em",
   };
@@ -23,43 +23,41 @@ const Services = () => {
       id="services"
       sx={{
         display: "flex",
-        justifyContent: { xs: "center", sm: "center", lg: "space-between" },
-        flexDirection: { xs: "column", sm: "column", lg: "row" },
-        alignContent: "center",
-        px: { xs: "1.3em", sm: "1.3em", lg: "8em" },
-        my: { xs: "0", sm: "0", lg: "7em" },
+        justifyContent: { xs: "center", md: "space-between" },
+        flexDirection: { xs: "column", md: "row" },
+        alignItems: "center",
+        px: { xs: "1.5em", md: "10em" },
+        py: { xs: 12, md: 6 },
+        MinHight: "100vh",
+        width: "100%",
+        gap: 5,
       }}
     >
       <Box>
         <Box>
           <Typography
             sx={{
-              color: "#FFCC00",
-              fontSize: { xs: "1.8em", sm: "2.3em", lg: "2.3em" },
+              color: "primary.main",
+              fontSize: { xs: "1.5em", md: "2em" },
               fontWeight: "600",
-              mb: "0.25em",
+              mb: ".5em",
             }}
           >
             Services
           </Typography>
           <Typography
-            variant="h4"
+            variant="h3"
             sx={{
               fontWeight: "600",
-              fontSize: { xs: "2.450em", sm: "2.450em", lg: "4em" },
+              fontSize: { xs: "2.4em", md: "3.5em" },
               lineHeight: "1.3em",
-              width: { xs: "auto", sm: "auto", lg: "11em" },
+              width: { xs: "100%", md: "11em" },
             }}
           >
             Providing solutions that meet your needs.
           </Typography>
         </Box>
-
-        <Box
-          sx={{
-            mt: "2em",
-          }}
-        >
+        <Box sx={{ mt: { xs: "1.5em", md: "3em" } }}>
           <Box sx={paraDiv}>
             <Typography sx={subTitles}>/ Commercial construction</Typography>
             <ArrowOutwardIcon sx={icons} />
@@ -84,16 +82,17 @@ const Services = () => {
       </Box>
       <Box
         sx={{
-          width: { xs: "auto", sm: "auto", lg: "700px" },
-          height: { xs: "320px", sm: "320px", lg: "700px" },
           position: "relative",
-          mt: { xs: "2.3em", sm: "2.3em", lg: "0" },
+          width: { xs: "100%", md: "50%" },
+          height: { xs: "300px", md: "700px" },
         }}
       >
         <Image
           src="https://i.postimg.cc/6qR17vkc/services.jpg"
-          alt=""
+          alt="Services"
           fill={true}
+          priority
+          style={{ objectFit: "cover" }}
         />
       </Box>
     </Box>

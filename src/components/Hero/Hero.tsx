@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Box, Button, Typography } from "@mui/material";
+
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import CircleIcon from "@mui/icons-material/Circle";
+
 import CarouselData from "./CarouselData";
 import NavBar from "./navBar";
 
 const Hero = () => {
-  const [Data, setData] = useState(CarouselData);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleDotClick = (index: number) => {
@@ -17,11 +18,11 @@ const Hero = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setActiveIndex((prevIndex) =>
-        prevIndex === Data.length - 1 ? 0 : prevIndex + 1
+        prevIndex === CarouselData.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
     return () => clearInterval(intervalId);
-  }, [Data.length]);
+  }, [CarouselData.length]);
 
   return (
     <Box id="home">
@@ -41,7 +42,7 @@ const Hero = () => {
           sx={{
             width: "100%",
             zIndex: 2,
-            position: { xs: "fixed", sm: "fixed", lg: "relative" },
+            position: { xs: "fixed", md: "relative" },
           }}
         >
           <NavBar />
@@ -49,14 +50,14 @@ const Hero = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: "12em", sx: "12em", lg: "6em" },
-            left: "0",
-            right: "0",
+            bottom: { xs: "12em", md: "7em" },
             mx: "auto",
-            zIndex: "1",
+            left: 0,
+            right: 0,
+            zIndex: 1,
           }}
         >
-          {Data.map((_, index) => (
+          {CarouselData.map((_, index) => (
             <Button
               key={index}
               onClick={() => handleDotClick(index)}
@@ -66,32 +67,31 @@ const Hero = () => {
             >
               <CircleIcon
                 sx={{
-                  color: activeIndex === index ? "#FFCC00" : "white",
-                  fontSize: { xs: "1.7em", sx: "1.7em", lg: "2em" },
-                  mx: { xs: "0.60em", sx: "0.60em", lg: "0.70em" },
+                  color: activeIndex === index ? "primary.main" : "white",
+                  fontSize: { xs: "1.7em", md: "2em" },
+                  mx: { xs: ".6em", md: ".7em" },
                   transition: "color 0.5s ease",
                 }}
               />
             </Button>
           ))}
         </Box>
-        {Data.map((items, slidesIndex) => {
+        {CarouselData.map((items, slidesIndex) => {
           const { id, img, title, description } = items;
           return (
             <Box
               key={id}
               sx={{
-                pt: { xs: "0", sx: "0", lg: "4.3em" },
                 position: "absolute",
                 width: "100%",
-                top: "0",
+                top: 0,
                 left: `${(slidesIndex - activeIndex) * 100}%`,
                 transition: "left 0.5s ease",
               }}
             >
               <Box
                 sx={{
-                  zIndex: "1",
+                  zIndex: 1,
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -109,9 +109,9 @@ const Hero = () => {
                     variant="h1"
                     sx={{
                       fontWeight: "700",
-                      lineHeight: { xs: "40px", sm: "40px", lg: "100px" },
-                      width: "13em",
-                      fontSize: { xs: "2em", sm: "2em", lg: "6em" },
+                      lineHeight: { xs: "1em", md: "1.3em" },
+                      width: { xs: "100%", md: "13em" },
+                      fontSize: { xs: "1.8em", md: "5em" },
                       mx: "auto",
                     }}
                   >
@@ -120,9 +120,9 @@ const Hero = () => {
                   <Typography
                     sx={{
                       my: "1em",
-                      fontSize: { xs: "18px", sm: "18px", lg: "24px" },
-                      fontWeight: "500",
-                      width: { xs: "90%", sx: "90%", lg: "60%" },
+                      fontSize: { xs: "1em", md: "1.2em" },
+                      fontWeight: "400",
+                      width: { xs: "100%", md: "60%" },
                       mx: "auto",
                     }}
                   >
@@ -131,17 +131,17 @@ const Hero = () => {
                   <Button
                     sx={{
                       color: "black",
-                      bgcolor: "#FFCC00",
+                      bgcolor: "primary.main",
                       textTransform: "uppercase",
-                      py: { xs: "0.90em", sm: "0.90em", lg: "1.2em" },
-                      px: { xs: "1.9em", sm: "1.9em", lg: "2.2em" },
+                      py: { xs: ".9em", md: "1.2em" },
+                      px: { xs: "1.9em", md: "2.2em" },
                       mt: "1em",
-                      fontSize: { xs: "14px", sx: "14px", lg: "16px" },
+                      fontSize: { xs: "14px", md: "16px" },
                       lineHeight: "10px",
                       fontWeight: "600",
                       borderRadius: "10px",
                       ":hover": {
-                        bgcolor: "#FFCC00",
+                        bgcolor: "primary.main",
                       },
                     }}
                   >
@@ -150,7 +150,7 @@ const Hero = () => {
                       sx={{
                         mb: "0.30em",
                         ml: "5px",
-                        fontSize: { xs: "1.6em", sx: "1.6em", lg: "1.7em" },
+                        fontSize: { xs: "1.6em", md: "1.7em" },
                       }}
                     />
                   </Button>
@@ -159,7 +159,7 @@ const Hero = () => {
               <Box>
                 <Image
                   style={{
-                    zIndex: "-1",
+                    zIndex: -1,
                     objectFit: "cover",
                   }}
                   src={img}
