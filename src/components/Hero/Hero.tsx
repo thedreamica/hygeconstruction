@@ -22,7 +22,7 @@ const Hero = () => {
       );
     }, 5000);
     return () => clearInterval(intervalId);
-  }, [CarouselData.length]);
+  }, []);
 
   return (
     <Box id="home">
